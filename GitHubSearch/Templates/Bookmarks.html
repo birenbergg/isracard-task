@@ -1,0 +1,18 @@
+﻿<hr />
+<div id="gallery">
+    <!-- A list of bookmarked repositories -->
+    <div class="repo" ng-repeat="repo in bookmarkedRepos">
+        <p class="repo-name">{{ repo.name }}</p>
+        <div class="repo-container">
+            <img class="repo-img" ng-src="{{repo.owner.avatar_url}}" alt="Alternate Text" />
+
+            <!-- Removes the repository item from this list -->
+            <bookmark-toggle-button repo="repo"></bookmark-toggle-button>
+        </div>
+    </div>
+</div>
+
+<!-- Message is shown when the bookmarked repos array is empty -->
+<div class="message" ng-show="bookmarkedRepos.length == 0">
+    No bookmarked repositories.
+</div>

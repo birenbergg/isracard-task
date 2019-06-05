@@ -1,0 +1,32 @@
+﻿<!-- Search form -->
+<form id="search-form" ng-submit="searchRepos(searchQuery)">
+    <div class="input-group">
+        <input type="search" name="search" class="form-control input-lg" placeholder="Type GitHub Repository Name" ng-model="searchQuery" />
+        <span class="input-group-btn">
+            <button ng-disabled="!searchQuery" type="submit" class="btn btn-primary btn-lg">Search GitHub</button>
+        </span>
+    </div>
+</form>
+
+<!-- Search results -->
+<div id="gallery">
+    <div class="repo" ng-repeat="repo in reposSearchResult">
+        <p class="repo-name">{{ repo.name }}</p>
+        <div class="repo-container">
+            <img class="repo-img" ng-src="{{repo.owner.avatar_url}}" alt="Alternate Text" />
+
+            <!-- Adds/removes the repository item to/from the bookmarked repos array -->
+            <bookmark-toggle-button repo="repo"></bookmark-toggle-button>
+        </div>
+    </div>
+</div>
+
+<!-- Message is shown while searching -->
+<div class="message" ng-show="loading">
+    Searching...
+</div>
+
+<!-- Message is shown when the search result is empty -->
+<div class="message" ng-show="zeroFound">
+    No repositories were found :(
+</div>

@@ -1,0 +1,100 @@
+﻿body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+    header img {
+        max-width: 500px;
+        margin-bottom: 3em;
+    }
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin: 0 .5em;
+        font-size: 1.5em;
+    }
+
+        nav ul li a:focus,
+        nav ul li a:hover {
+            text-decoration: none;
+        }
+
+main {
+    flex-grow: 1;
+    max-width: 1600px;
+    width: 100%;
+    padding: 2em;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+}
+
+#search-form {
+    margin-bottom: 2em;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    grid-gap: 30px;
+    justify-items: center;
+}
+
+.repo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2em;
+    padding: 2em;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 260px;
+}
+
+p.repo-name {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    word-break: break-all;
+}
+
+.repo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img.repo-img {
+    width: 100%;
+    margin: 1em auto;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+.message {
+    text-align: center;
+    font-size: 18px;
+}

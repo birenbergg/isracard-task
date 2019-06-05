@@ -1,0 +1,16 @@
+﻿<button class="repo-bookmark btn"
+        ng-class="{
+            'btn-basic': !$parent.isRepoBookmarked(repo.id),
+            'btn-success': $parent.isRepoBookmarked(repo.id)
+        }"
+        type="button"
+        ng-click="$parent.toggleBookmark(repo)">
+
+    <span class="glyphicon"
+          ng-class="{
+            'glyphicon-star-empty': !$parent.isRepoBookmarked(repo.id),
+            'glyphicon-star': $parent.isRepoBookmarked(repo.id)
+          }"></span>
+
+    {{ $parent.isRepoBookmarked(repo.id) ? 'Unbookmark' : 'Bookmark' }}
+</button>
